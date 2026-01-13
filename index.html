@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <title>지니지나 구느냐</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="top-banner">
+      <img src="images/배너/배너 초안1.png" alt="상단 배너">
+    </div>
+
+    <div class="grid"></div>
+
+    <div class="pagination">
+      <a href="#" data-page="prev">이전</a>
+      <a href="#" data-page="1" class="active">1</a>
+      <a href="#" data-page="2" >2</a>
+      <a href="#" data-page="3">3</a>
+      <a href="#" data-page="4">4</a>
+      <a href="#" data-page="5">5</a>
+      <a href="#" data-page="next">다음</a>
+    </div>
+
+  </div>
+
+<div id="videoModal" class="video-modal">
+  <div class="video-content">
+    <span class="close">&times;</span>
+
+    <video id="videoPlayer" controls playsinline></video>
+
+    <!-- 설명 -->
+    <div id="videoDesc" class="video-desc"></div>
+
+    <!-- 날짜 -->
+    <div id="videoDate" class="video-date"></div>
+  </div>
+</div>
+
+
+
+  <!-- 🔴 스크립트 로딩 순서 중요 -->
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
