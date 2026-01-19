@@ -12,7 +12,6 @@ async function fetchImages(page) {
   try {
     const response = await fetch(`http://backend-svc:3000/api/thumbnails/${page}`);
     const data = await response.json();
-    console.log(data);
 
     // 🔥 데이터가 없는 경우 (마지막 페이지) 처리
     // API returns { success: [...], error: ... }
