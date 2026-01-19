@@ -59,7 +59,7 @@ pipeline {
                         git config user.name "DONGHYEOK137"
 
                        # 이미지 태그 업데이트(repositoy가 포함된 모든 라인을 찾음)
-                        ../yq -i '(.. | select(has("repository") and .repository == "${DOCKER_IMAGE}")).tag = "${DOCKER_TAG}"' charts/backend/values.yaml
+                        ../yq -i '(.. | select(has("repository") and .repository == "${DOCKER_IMAGE}")).tag = "${DOCKER_TAG}"' charts/frontend/values.yaml
 
                         # 변경된 파일 스테이징
                         git add charts/frontend/values.yaml
