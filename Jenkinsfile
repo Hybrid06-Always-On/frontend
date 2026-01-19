@@ -67,7 +67,7 @@ pipeline {
                         # 변경 사항이 있는 경우에만 커밋 및 푸시 진행
                         if [ -n "\$(git status --porcelain)" ]; then
                             git commit -m "Update ${DOCKER_IMAGE} tag to ${DOCKER_TAG}"
-                            git remote set-url origin https://${GIT_USER}:${GIT_PASS}@${HELM_REPO_URL} helm-temp
+                            git remote set-url origin https://${GIT_USER}:${GIT_PASS}@${HELM_REPO_URL} 
                             git push origin main
                             
                         else
