@@ -25,7 +25,7 @@ pipeline {
                     docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS_ID}") {
                         def customImage = docker.build("${DOCKER_IMAGE}:${DOCKER_TAG}")
                         customImage.push()   
-                        customImage.push("latesㅁt")
+                        customImage.push("latest")
                     }
                 }
             }
