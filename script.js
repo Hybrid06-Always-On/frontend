@@ -10,12 +10,12 @@ let hls = null;
 ========================= */
 async function fetchImages(page) {
   try {
-    const response = await fetch(`http://backend-svc:3000/api/thumbnails/${page}`);
+    const response = await fetch(`/api/thumbnails/${page}`);
     const data = await response.json();
 
     // 🔥 데이터가 없는 경우 (마지막 페이지) 처리
     // API returns { success: [...], error: ... }
-    const items = data.success || []; 
+    const items = data.success || [];
 
     if (items.length === 0) {
       alert("데이터가 없습니다.");
@@ -24,7 +24,7 @@ async function fetchImages(page) {
     // 데이터가 있을 때만 페이지 및 화면 갱신
     currentPage = page;
     totalPages = data.totalPages || 999; // 백엔드에서 값을 안 주므로 임시로 큰 값 설정 (그래야 다음 버튼 눌림)
-    
+
     renderImages(items);
     renderPagination(); // 페이지네이션 버튼 다시 그리기
 
@@ -78,7 +78,7 @@ async function fetchVideo(id) {
   if (!id) return;
 
   try {
-    const response = await fetch(`http://backend-svc:3000/api/video/${id}`);
+    const response = await fetch(`/api/video/${id}`);
     const data = await response.json();
     console.log(data);
 
@@ -193,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (currentPage > 1) nextPage--;
       else return; // 1페이지면 무시
     } else if (value === "next") {
-        nextPage++;
+      nextPage++;
     } else {
       nextPage = Number(value);
     }
