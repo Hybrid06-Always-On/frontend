@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background:  #0f0f0f;
 }
 
 /* 메인 컨테이너 (화면 100%) */
@@ -45,21 +45,25 @@ body {
   margin-bottom: 2.5rem;
 }
 
-.grid img {
-  width: 90%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 12px;
-  background: #ddd;
+.grid {
+  align-items: start; /* ★ 카드 상단 기준선 통일 */
 }
 
-.grid img:nth-child(odd) {
+.grid-item {
+  width: 90%;
+  align-self: start;  /* ★ 오른쪽 내려가는 현상 제거 */
+}
+
+.grid-item:nth-child(odd) {
   justify-self: start;
 }
 
-.grid img:nth-child(even) {
+.grid-item:nth-child(even) {
   justify-self: end;
 }
+
+
+
 
 /* 페이지네이션 */
 .pagination {
